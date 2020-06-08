@@ -1,0 +1,10 @@
+{
+    "dimension": "3d",
+    "batch_size": 16,
+    "lr": 0.001,
+    "epochs": 100,
+    "save_path": "test.pt",
+    "npy_path": "./data_ready/3d",
+    "train_csv": "./annotations/train.csv",
+    "test_csv": "./annotations/test.csv"
+}
