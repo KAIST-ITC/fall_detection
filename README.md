@@ -1,4 +1,7 @@
 # A Commercial Radar based Fall Detection using 4D CNN
+
+**본 과제는 과학기술정보통신부에서 시행한 정보통신,방송연구개발사업의 결과입니다.**
+
 THIS PROJECT IS STILL A WORK-IN-PROGRESS.
 
 A radar is known as a proper platform for fall detection because camera violates privacy and wearable sensors are often bulky. Since a conventional motion detection algorithm for radar data struggles to classify complex falls, some studies adopted deep learning techniques. Instead of manipulating raw radar signals, one can generate 3D radar image ((Range, Phi, Theta) or (x, y, z)) out of raw signals and benefit from existing CNN architecture in computer vision. Although a series of 3D radar image are natural fit for 4D-CNN, to the best of our knowledge, this work first demonstrates the feasibility of 4D-CNN on radar data.
