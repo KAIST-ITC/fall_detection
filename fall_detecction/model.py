@@ -3,63 +3,63 @@ import torch.nn as nn
 from torch.autograd import Variable
 from convNd import convNd
 
-class Conv3D(nn.Module):
+# class Conv3D(nn.Module):
 
-    def __init__(self):
+#     def __init__(self):
 
-        super().__init__()
+#         super().__init__()
 
-        self.conv_layer1 = self._make_conv_layer(1, 32)
-        self.conv_layer2 = self._make_conv_layer(32, 64)
-        self.conv_layer3 = self._make_conv_layer(64, 124)
-        self.conv_layer4 = self._make_conv_layer(124, 256)
-        self.conv_layer5 = nn.Conv3d(256, 256, kernel_size=(1, 3, 1), padding=0)
+#         self.conv_layer1 = self._make_conv_layer(1, 32)
+#         self.conv_layer2 = self._make_conv_layer(32, 64)
+#         self.conv_layer3 = self._make_conv_layer(64, 124)
+#         self.conv_layer4 = self._make_conv_layer(124, 256)
+#         self.conv_layer5 = nn.Conv3d(256, 256, kernel_size=(1, 3, 1), padding=0)
 
-        self.fc5 = nn.Linear(256, 256)
-        self.relu = nn.LeakyReLU()
-        self.batch0 = nn.BatchNorm1d(256)
-        self.drop = nn.Dropout(p=0.15)
-        self.fc6 = nn.Linear(256, 124)
-        self.relu = nn.LeakyReLU()
-        self.batch1 = nn.BatchNorm1d(124)
+#         self.fc5 = nn.Linear(256, 256)
+#         self.relu = nn.LeakyReLU()
+#         self.batch0 = nn.BatchNorm1d(256)
+#         self.drop = nn.Dropout(p=0.15)
+#         self.fc6 = nn.Linear(256, 124)
+#         self.relu = nn.LeakyReLU()
+#         self.batch1 = nn.BatchNorm1d(124)
 
-        self.drop = nn.Dropout(p=0.15)
-        self.fc7 = nn.Linear(124, 2)
+#         self.drop = nn.Dropout(p=0.15)
+#         self.fc7 = nn.Linear(124, 2)
 
-    def _make_conv_layer(self, in_c, out_c):
-        conv_layer = nn.Sequential(
-            nn.Conv3d(in_c, out_c, kernel_size=(2, 3, 2), padding=0),
-            nn.LeakyReLU(),
-            nn.Conv3d(out_c, out_c, kernel_size=(2, 3, 2), padding=1),
-            nn.LeakyReLU(),
-            nn.MaxPool3d((2, 2, 2)),
-        )
-        return conv_layer
+#     def _make_conv_layer(self, in_c, out_c):
+#         conv_layer = nn.Sequential(
+#             nn.Conv3d(in_c, out_c, kernel_size=(2, 3, 2), padding=0),
+#             nn.LeakyReLU(),
+#             nn.Conv3d(out_c, out_c, kernel_size=(2, 3, 2), padding=1),
+#             nn.LeakyReLU(),
+#             nn.MaxPool3d((2, 2, 2)),
+#         )
+#         return conv_layer
 
-    def forward(self, x):
-        print(x.size())
-        x = self.conv_layer1(x)
-        print(x.size())
-        x = self.conv_layer2(x)
-        print(x.size())
-        x = self.conv_layer3(x)
-        print(x.size())
-        x = self.conv_layer4(x)
-        print(x.size())
-        x = self.conv_layer5(x)
-        print(x.size())
-        x = x.view(x.size(0), -1)
-        x = self.fc5(x)
-        x = self.relu(x)
-        x = self.batch0(x)
-        x = self.drop(x)
-        x = self.fc6(x)
-        x = self.relu(x)
-        x = self.batch1(x)
-        x = self.drop(x)
-        x = self.fc7(x)
+#     def forward(self, x):
+#         print(x.size())
+#         x = self.conv_layer1(x)
+#         print(x.size())
+#         x = self.conv_layer2(x)
+#         print(x.size())
+#         x = self.conv_layer3(x)
+#         print(x.size())
+#         x = self.conv_layer4(x)
+#         print(x.size())
+#         x = self.conv_layer5(x)
+#         print(x.size())
+#         x = x.view(x.size(0), -1)
+#         x = self.fc5(x)
+#         x = self.relu(x)
+#         x = self.batch0(x)
+#         x = self.drop(x)
+#         x = self.fc6(x)
+#         x = self.relu(x)
+#         x = self.batch1(x)
+#         x = self.drop(x)
+#         x = self.fc7(x)
 
-        return x
+#         return x
 
 
 class Conv3D_light(nn.Module):
