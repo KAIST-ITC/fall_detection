@@ -9,7 +9,7 @@ A radar is known as a proper platform for fall detection because camera violates
 ## Fall Detection
 **/fall_detection**: (preliminary) 1)a fall detection data set generator that creates both 2d and 3d radar image using Walabot's getRawImageSlice function and getRawImage function for fall and various non-fall activities. 2)3D-CNN model that correctly classifies fall and non-falls.
 
-Code based on [Tutorial-about-3D-convolutional-network](https://github.com/OValery16/Tutorial-about-3D-convolutional-network).
+Code based on [Tutorial-about-3D-convolutional-network](https://github.com/OValery16/Tutorial-about-3D-convolutional-network)
 
 Code for ConvNd from [convNd and convTransposeNd in Pytorch](https://github.com/pvjosue/pytorch_convNd)
 
