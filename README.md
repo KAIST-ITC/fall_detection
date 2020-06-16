@@ -7,7 +7,7 @@ THIS PROJECT IS STILL A WORK-IN-PROGRESS.
 A radar is known as a proper platform for fall detection because camera violates privacy and wearable sensors are often bulky. Since a conventional motion detection algorithm for radar data struggles to classify complex falls, some studies adopted deep learning techniques. Instead of manipulating raw radar signals, one can generate 4D radar image ((Range, Phi, Theta, Time) or (x, y, z, time)) out of raw signals and benefit from existing CNN architecture in computer vision. Although a series of 4D radar image are natural fit for 4D-CNN, to the best of our knowledge, this work first demonstrates the feasibility of 4D-CNN on radar data.
 
 ## Fall Detection
-**/fall_detection**: (preliminary) 1)a fall detection data set generator that creates both 3D(R, Phi, t) and 4D(R, Phi, Theta, t) radar image using Walabot's getRawImageSlice function and getRawImage function for fall and various non-fall activities. 2)3D-CNN model(for both 3d and 4d radar data) that correctly classifies fall and non-falls.
+**/fall_detection**: (preliminary) 1)a fall detection data set generator that creates both 3D(R, Phi, t) and 4D(R, Phi, Theta, t) radar image using Walabot's getRawImageSlice function and getRawImage function for fall and various non-fall activities. 2)3D-CNN model(for both 3D and 4D radar data) that correctly classifies fall and non-falls.
 
 Code based on [Tutorial-about-3D-convolutional-network](https://github.com/OValery16/Tutorial-about-3D-convolutional-network)
 
